@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Информация о отеле</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      margin: 20px;
+      font-family: 'Arial', sans-serif;
+      background-color: darkblue;/
+    }
+
+    .container {
+      margin-top: 20px;
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    table {
+      background-color: #246fff;
+    }
+
+    th {
+      background-color: #003081;
+      color: white;
+    }
+
+    td {
+      background-color: #f0f8ff;
+    }
+
+    .btn-back {
+      margin: 10px 15px;
+      background-color: #ff6347;
+      color: white;
+    }
+
+    .btn-back:hover {
+      background-color: #ff4500; /* Темно-оранжевый при наведении */
+    }
+
+    .top-flowers {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .top-flower-item {
+      margin-bottom: 10px;
+    }
+
+    .top-flower-name {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+<div th:replace="~{navigation :: navi('Home')}"></div>
+<div class="container">
+  <table class="table">
+    <tbody>
+    <tr>
+      <th>ID</th>
+      <td th:text="${hotel.id}"></td>
+    </tr>
+    <tr>
+      <th>Название</th>
+      <td th:text="${hotel.name}"></td>
+    </tr>
+    <tr>
+      <th>Кол-во мест</th>
+      <td th:text="${hotel.status}"></td>
+    </tr>
+    <tr>
+      <th>Цена</th>
+      <td th:text="${hotel.price}"></td>
+    </tr>
+    <tr>
+      <th>Тип комнаты</th>
+      <td th:text="${hotel.quantity}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <a th:href="${referer}" style='margin: 10px 15px' class="btn btn-danger">Назад</a>
+</div>
+</body>
+</html>
+
